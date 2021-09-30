@@ -98,7 +98,7 @@ public class Actividad7_SumaPilas {
             System.out.println("\n");
 
         } else {
-            System.out.println("\033[31m" + "Pila A \033[m" + "y" + "\033[35m" + " Pila B \033[m" + "están vacia... \n"); // Si el usuario aun no selecciona la Opc. 1 no mostrara ningún dato.
+            System.out.println("\033[31m" + "Pila A \033[m" + "y" + "\033[35m" + " Pila B \033[m" + "están vacias... \n"); // Si el usuario aun no selecciona la Opc. 1 no mostrara ningún dato.
         }
     }
 
