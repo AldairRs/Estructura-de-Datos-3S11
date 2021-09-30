@@ -60,7 +60,7 @@ public class Actividad7_SumaPilas {
         vector2 = new int[tam];
     }
 
-    private void Llenar() {
+    public void Llenar() {
         if (cont > 0 || cont2 > 0) { //Condición para detecta si el usuario ya habia llenado las pilas A y B anterior 
             System.out.println("\033[31m" + "Las Pila A y B estan llenas, elegir Opc. 3 para eliminar los valores de las pilas y poder llenar de nuevo la pilas A y B con el tamaño "+tam+"\033[m\n");
         } else {
@@ -84,7 +84,7 @@ public class Actividad7_SumaPilas {
         }
     }
 
-    private void Mostrar() {
+    public void Mostrar() {
         if (cont > 0 && cont2 > 0) { //Si los cont y cont2 fuerón incrementando entonces se mostraran las pilas.
             System.out.println("\n\033[31m" + "Pila A \033[m");
             for (int j = 0; j < tam; j++) {
@@ -102,7 +102,7 @@ public class Actividad7_SumaPilas {
         }
     }
 
-    private void Eliminar() {
+    public void Eliminar() {
         if (cont > 0 && cont2 > 0) { //Si el usuario a generado de manera correcta la pila, entonce cont y cont2 seran mayores a 0 y se eliminaran las pilas
             for (int i = 0; i <= tam; i++) {
                 cont--;//Eliminar pila A (decremento)
@@ -119,7 +119,7 @@ public class Actividad7_SumaPilas {
         }
     }
 
-    private void Unir() {
+    public void Unir() {
         if (cont > 0 || cont2 > 0) { //Si el usuario a generado de manera correcta la pila, entonces cont y cont2 seran mayores a 0 y se sumaran las pilas.
             System.out.println("Pilas sumadas...");
             for (int j = 0; j < tam; j++) {
@@ -131,7 +131,7 @@ public class Actividad7_SumaPilas {
         }
     }
 
-    private void PilaC() {
+    public void PilaC() {
         if (cont > 0 || cont2 > 0) { //Si el usuario a generado de manera correcta la pila, entonces cont y cont2 seran mayores a 0 y se sumaran las pilas.
             System.out.println("\n\033[34m" + "Pila C \033[m");
 
