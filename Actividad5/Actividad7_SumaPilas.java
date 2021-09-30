@@ -104,7 +104,7 @@ public class Actividad7_SumaPilas {
 
     public void Eliminar() {
         if (cont > 0 && cont2 > 0) { //Si el usuario a generado de manera correcta la pila, entonce cont y cont2 seran mayores a 0 y se eliminaran las pilas
-            for (int i = 0; i <= tam; i++) {
+            for (int i = 0; i < tam; i++) {
                 cont--;//Eliminar pila A (decremento)
                 cont2--;//Eliminar pila B
             }
