@@ -136,7 +136,7 @@ public class Actividad7_SumaPilas {
             System.out.println("\n\033[34m" + "Pila C \033[m");
 
             if (Sum > 0) {//Si la variable Sum se almacenaron los vectores, entoces mostrara la pila C
-                for (int j = 0; j < tam; j++) {
+                for (int j = tam-1; j >= 0; j--) {
                     System.out.print(vector[j] + vector2[j] + "  ");
                     /*vector = Pila A, vector2 = Pila B, Ejem. Pila A[18][58][29][21] + Pila B[132][186][187][102] = Pila C[150][244][216][123]*/
                 }
