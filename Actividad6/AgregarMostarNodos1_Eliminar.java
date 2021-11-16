@@ -87,7 +87,6 @@ public class AgregarMostarNodos1_2 {
             System.out.println(reset + "LISTA DE NODOS");
             while (temp != null) {
                 System.out.println("Nodo: [" + azul + temp.name + reset + "]");
-                //System.out.println(reset + "Nodo: [" + azul + temp.num + reset + "]");
                 temp = temp.next;
             }
         } else {
@@ -98,7 +97,6 @@ public class AgregarMostarNodos1_2 {
     public static void mostrar(String name, Nodo sig) {
         System.out.println(name);
         while (sig != null) {
-            //System.out.print(sig.num + " ");
             System.out.print(sig.name + " ");
             sig = sig.next;
         }
@@ -107,7 +105,7 @@ public class AgregarMostarNodos1_2 {
     public void EliminarNodo() {
         if (top != null) {
             System.out.print("\n" + reset + "El nodo [" + azul + top.name + reset + "] se elimino.");
-            top = top.next;
+            top = top.next;//Elimina el ultimo nodo agregado
         } else {
             System.out.print("\n" + rojo + "La lista esta vacia!!!");
         }
