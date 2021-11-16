@@ -34,8 +34,8 @@ public class AgregarMostarNodos1_2 {
                     + "*      \t\t     " + azul + "Menu" + reset + " \t\t      *\n"
                     + "***********************************************" + "\n"
                     + "*   " + azul + "1" + reset + ". Agregar nodo.   *   " + azul + "4" + reset + ". Generar palabra *\n"
-                    + "*   " + azul + "2" + reset + ". Mostrar lista.  *   " + azul + "5" + reset + ". Buscar nodo     *\n"
-                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "6" + reset + ". Salir.          *\n"
+                    + "*   " + azul + "2" + reset + ". Mostrar lista.  *   " + azul + "5" + reset + ". Salir.          *\n"
+                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "6" + reset + "                  *\n"
                     + "***********************************************" + "\n"
                     + azul + "Selecciona una opción: " + blanco);
             switch (Opcion = scaner.nextInt()) {
@@ -51,11 +51,8 @@ public class AgregarMostarNodos1_2 {
                 case 4:
                     nodos.GenerarPalabra();//Opción 4 para generar palabras con una longitud de 5 caracteres "Letras mayúsculas, minúsculas, números y caracteres.
                     break;
-                case 5:
-                    nodos.BuscarNodo();//Opción 5 para buscar nodos.
-                    break;
             }
-        } while (Opcion != 6);
+        } while (Opcion != 5);
     }
 
     static class Nodo {
@@ -156,36 +153,6 @@ public class AgregarMostarNodos1_2 {
                 cont2 = reg;
                 total++;
             }
-        }
-    }
-
-    public void BuscarNodo() {
-        int contn=total;//Con este contador mostrara en que posicion se encuentran los nodos
-        if (top != null) {//Si la lista tiene valores entonces buscara el nodo
-            Nodo temp = new Nodo();
-            temp = top;
-            boolean encontrado = false;//Declaramos la variable encontrado booleana con un valor falso
-            System.out.print(reset + "\n" + "Ingrese el dato del nodo a buscar: ");
-            String nodoBuscado = scaner.nextLine();//Ingresara el valor el usuario que desea buscar
-            do {
-                boolean res = nodoBuscado.equals(temp.name);//Aqui compara objetos con la lista de nodos y el valor que quiera buscar el usuario
-                if (res == true) {//Si se encuentra el nodo entonces la valiable encontrado sera verdadero
-                    encontrado = true;
-                } else {//Si no se cumple no existe el nodo ingresado en la lista
-                    contn--;
-                    encontrado = false;
-                    temp = temp.next;
-                }
-            } while (temp != null && encontrado != true);//Mientras el nodo "temp" sea diferente a nulo y la variable booleana sea diferente a "true" hacer las lineas de código "171 hasta la 177"
-            System.out.println("");
-
-            if (encontrado == true) {//Si la variable es verdades entonces si existe el nodo ingresado por el usuario
-                System.out.print(reset + "Nodo encontrado: " + nodoBuscado + " en la posición: "+contn);
-            } else {//Si no se cumple entonces no existe el nodo a buscar
-                System.out.print(reset + "Nodo no encontrado: " + nodoBuscado);
-            }
-        } else {
-            System.out.println("\n" + rojo + "La lista esta vacia!!!");//Si la lista esta vacia entonce mostrara este mensaje
         }
     }
 }
