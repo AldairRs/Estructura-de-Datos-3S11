@@ -35,7 +35,7 @@ public class AgregarMostarNodos1_2 {
                     + "***********************************************" + "\n"
                     + "*   " + azul + "1" + reset + ". Agregar nodo.   *   " + azul + "4" + reset + ". Generar palabra *\n"
                     + "*   " + azul + "2" + reset + ". Mostrar lista.  *   " + azul + "5" + reset + ". Salir.          *\n"
-                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "6" + reset + "                  *\n"
+                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "" + reset + "                   *\n"
                     + "***********************************************" + "\n"
                     + azul + "Selecciona una opción: " + blanco);
             switch (Opcion = scaner.nextInt()) {
@@ -155,4 +155,5 @@ public class AgregarMostarNodos1_2 {
             }
         }
     }
+}
 }
