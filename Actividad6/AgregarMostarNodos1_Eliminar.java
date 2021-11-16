@@ -33,9 +33,9 @@ public class AgregarMostarNodos1_2 {
             System.out.print("\n" + "***********************************************" + "\n"
                     + "*      \t\t     " + azul + "Menu" + reset + " \t\t      *\n"
                     + "***********************************************" + "\n"
-                    + "*   " + azul + "1" + reset + ". Agregar nodo.   *   " + azul + "4" + reset + ". Generar palabra *\n"
-                    + "*   " + azul + "2" + reset + ". Mostrar lista.  *   " + azul + "5" + reset + ". Buscar nodo     *\n"
-                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "6" + reset + ". Salir.          *\n"
+                    + "*   " + azul + "1" + reset + ". Agregar nodo.   *   " + azul + "4" + reset + "  . Salir.        *\n"
+                    + "*   " + azul + "2" + reset + ". Mostrar lista.  *   " + azul + "" + reset + "                   *\n"
+                    + "*   " + azul + "3" + reset + ". Eliminar nodo.  *   " + azul + "" + reset + "                   *\n"
                     + "***********************************************" + "\n"
                     + azul + "Selecciona una opción: " + blanco);
             switch (Opcion = scaner.nextInt()) {
@@ -48,14 +48,8 @@ public class AgregarMostarNodos1_2 {
                 case 3:
                     nodos.EliminarNodo();//Opción 3 para eliminar el ultimo nodo.
                     break;
-                case 4:
-                    nodos.GenerarPalabra();//Opción 4 para generar palabras con una longitud de 5 caracteres "Letras mayúsculas, minúsculas, números y caracteres.
-                    break;
-                case 5:
-                    nodos.BuscarNodo();//Opción 5 para buscar nodos.
-                    break;
             }
-        } while (Opcion != 6);
+        } while (Opcion != 4);
     }
 
     static class Nodo {
@@ -118,74 +112,5 @@ public class AgregarMostarNodos1_2 {
             System.out.print("\n" + rojo + "La lista esta vacia!!!");
         }
         System.out.println("");
-    }
-
-    public void GenerarPalabra() {//Metodo para generar una palabra aleatoria con una longitud de 5 caracteres
-        String Mayus = String.valueOf((char) (Math.random() * 26 + 65));//Testa linea de código tomara encuenta codigo ASCII apartir del codigo 65 hasta 26 mostrara letras Mayusculas y asi sucesivamente
-        String Alfanumericos = String.valueOf((char) (Math.random() * 26 + 65)) + String.valueOf((char) (Math.random() * 26 + 97)) + String.valueOf((char) (Math.random() * 10 + 48));//26+65
-        String Alfanumericos2 = String.valueOf((char) (Math.random() * 26 + 97)) + String.valueOf((char) (Math.random() * 10 + 48)) + String.valueOf((char) (Math.random() * 26 + 65));//26+97
-        String Alfanumericos3 = String.valueOf((char) (Math.random() * 10 + 48)) + String.valueOf((char) (Math.random() * 26 + 65)) + String.valueOf((char) (Math.random() * 26 + 97));//10+48
-        String Caracteres = String.valueOf((char) (Math.random() * 15 + 33));
-        String Caracteres2 = String.valueOf((char) (Math.random() * 7 + 58));
-        String Caracteres3 = String.valueOf((char) (Math.random() * 6 + 91));
-
-        if (top == null) {//Si la lista de nodos es nula entonces la palabra generada sera el pincipal nodo de la lista
-            top = new Nodo();
-            System.out.print("\n" + reset + "Palabra generada: ");
-            top.name = Mayus + Alfanumericos + Caracteres;//Una ves dandole la palabra generada se almacenara en la lista de nodos y tomara el metodo de agregar nodo
-            System.out.print(reset + "[" + azul + top.name + reset + "]\n");
-            top.next = null;
-            total++;
-        } else {//Si la lista tiene valores entonces se creara un nodo temporal para almacenarlo en la lista y hara el mismo procedimiento con las variables "palabra2" y "palabra3"
-            if (cont2 == 0) {
-                Nodo temp = new Nodo();
-                System.out.println("\n" + "Palabra generada: ");
-                temp.name = Mayus + Alfanumericos2 + Caracteres2;//Con el uso de if anidado nos ayudara a que apartir del caracter sugndo, tercero y cuarto sean aleatorios
-                temp.next = top;//Se agregara a la lista la palabra generada y asi sucesivamente con el resto del codigo
-                System.out.print(reset + "[" + azul + temp.name + reset + "]\n");
-                top = temp;
-                cont2++;
-                total++;
-            } else if (cont2 == 1) {
-                Nodo temp = new Nodo();
-                System.out.println("\n" + "Palabra generada: ");
-                temp.name = Mayus + Alfanumericos3 + Caracteres3;
-                temp.next = top;
-                System.out.print(reset + "[" + azul + temp.name + reset + "]\n");//Muestra la palabra generada que se agregara a la lista
-                top = temp;
-                cont2 = reg;
-                total++;
-            }
-        }
-    }
-
-    public void BuscarNodo() {
-        int contn=total;//Con este contador mostrara en que posicion se encuentran los nodos
-        if (top != null) {//Si la lista tiene valores entonces buscara el nodo
-            Nodo temp = new Nodo();
-            temp = top;
-            boolean encontrado = false;//Declaramos la variable encontrado booleana con un valor falso
-            System.out.print(reset + "\n" + "Ingrese el dato del nodo a buscar: ");
-            String nodoBuscado = scaner.nextLine();//Ingresara el valor el usuario que desea buscar
-            do {
-                boolean res = nodoBuscado.equals(temp.name);//Aqui compara objetos con la lista de nodos y el valor que quiera buscar el usuario
-                if (res == true) {//Si se encuentra el nodo entonces la valiable encontrado sera verdadero
-                    encontrado = true;
-                } else {//Si no se cumple no existe el nodo ingresado en la lista
-                    contn--;
-                    encontrado = false;
-                    temp = temp.next;
-                }
-            } while (temp != null && encontrado != true);//Mientras el nodo "temp" sea diferente a nulo y la variable booleana sea diferente a "true" hacer las lineas de código "171 hasta la 177"
-            System.out.println("");
-
-            if (encontrado == true) {//Si la variable es verdades entonces si existe el nodo ingresado por el usuario
-                System.out.print(reset + "Nodo encontrado: " + nodoBuscado + " en la posición: "+contn);
-            } else {//Si no se cumple entonces no existe el nodo a buscar
-                System.out.print(reset + "Nodo no encontrado: " + nodoBuscado);
-            }
-        } else {
-            System.out.println("\n" + rojo + "La lista esta vacia!!!");//Si la lista esta vacia entonce mostrara este mensaje
-        }
     }
 }
